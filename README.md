@@ -73,15 +73,21 @@ If you already have webpp, rg, service plan, etc, then zip the code and deploy (
 
 zip -r azure-python-webapp.zip . -x '.??*'
 
+az webapp config appsettings set \
+    --resource-group webapp_rg_0073 \
+    --name my-python-webap \
+    --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+	
+
 az webapp deploy --type zip \
-    --name ambitious-dune-b61b498b8be7402cbb5cba66ae358d69 \
-    --resource-group narayanas87_rg_0073 \
+    --name my-python-webap \
+    --resource-group webapp_rg_0073 \
     --src-path azure-python-webapp.zip 
 
 
 ```
 
-open browser and check http://ambitious-dune-b61b498b8be7402cbb5cba66ae358d69.azurewebsites.net
+open browser and check http://my-python-webap.azurewebsites.net
 
 
 
