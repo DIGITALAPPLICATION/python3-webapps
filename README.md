@@ -6,7 +6,7 @@ Tested this on ubuntu:
 
 `apt-get install python3 -y && apt-get install python3-pip -y`
 
-`git clone -b 2-webapp-flask-templates-loop https://github.com/DIGITALAPPLICATION/python3-webapps.git`
+`git clone -b 4-webapp-flask-docker https://github.com/DIGITALAPPLICATION/python3-webapps.git`
 `cd python3-webapps`
 
 `pip install -r requirements.txt`
@@ -20,8 +20,8 @@ Tested this on ubuntu:
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:81
- * Running on http://10.0.0.4:81
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.4:5000
 Press CTRL+C to quit
 49.37.130.119 - - [25/Sep/2022 08:00:45] "GET / HTTP/1.1" 200 -
 49.37.130.119 - - [25/Sep/2022 08:00:46] "GET / HTTP/1.1" 200 -
@@ -30,7 +30,21 @@ Press CTRL+C to quit
 49.37.130.119 - - [25/Sep/2022 08:00:48] "GET / HTTP/1.1" 200 -
 ```
 
-open browser and check http://localhost:81 or http://{publicIp}:81
+open browser and check http://localhost:5000 or http://{publicIp}:5000
+
+Ctrl+c = stop the lcoally runnign app at the same port 5000
+
+once local testing completed, try docker build
+
+`apt-get install docker.io -y`
+
+`docker image build -t flask_docker .`
+
+`docker run -p 5000:5000 -d flask_docker`
+
+open browser and check http://localhost:81 or http://{publicIp}:5000
+
+
 
 
 
