@@ -1,4 +1,4 @@
-https://pythonbasics.org/flask-tutorial-hello-world/
+https://pythonbasics.org/flask-tutorial-templates/
 
 Tested this on ubuntu:
 
@@ -6,7 +6,7 @@ Tested this on ubuntu:
 
 `apt-get install python3 -y && apt-get install python3-pip -y`
 
-`git clone -b webapp-flask https://github.com/DIGITALAPPLICATION/python3-webapps.git`
+`git clone -b 2-webapp-flask-templates https://github.com/DIGITALAPPLICATION/python3-webapps.git`
 `cd python3-webapps`
 
 `pip install -r requirements.txt`
