@@ -13,7 +13,7 @@ Tested this on ubuntu:
 
 `output: Successfully installed Jinja2-3.1.2 MarkupSafe-2.1.1 Werkzeug-2.2.2 click-8.1.3 flask-2.2.2 importlib-metadata-4.12.0 itsdangerous-2.1.2`
 
-`python3 sam.py`
+`python3 webapp.py`
 
 ```
  * Serving Flask app 'sam'
