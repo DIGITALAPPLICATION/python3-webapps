@@ -35,16 +35,53 @@ open browser and check http://localhost:5000 or http://{publicIp}:5000
 
 Ctrl+c = stop the lcoally runnign app at the same port 5000
 
-once local testing completed, try docker build
+once local testing completed, try deploy to azure
 
-`apt-get install docker.io -y`
+https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
 
-`docker image build -t flask_docker .`
+`curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
 
-`docker run -p 5000:5000 -d flask_docker`
+```
+az login
 
-open browser and check http://localhost:81 or http://{publicIp}:5000
+//this will create a default webapp azure service, defaulr service plan, defaukt resource grouo with sku B1 plan
+//also, code will be deployed from current directory to azure webapp service
+az webapp up --runtime PYTHON:3.9 --sku B1 --logs --location "North Europe"
 
+output:
+The webapp 'ambitious-dune-b61b498b8be7402cbb5cba66ae358d69' doesn't exist
+Creating Resource group 'narayanas87_rg_0073' ...
+Resource group creation complete
+Creating AppServicePlan 'narayanas87_asp_9165' ...
+Creating webapp 'ambitious-dune-b61b498b8be7402cbb5cba66ae358d69' ...
+Configuring default logging for the app, if not already enabled
+Creating zip with contents of dir /root/msdocs-python-django-webapp-quickstart ...
+Getting scm site credentials for zip deployment
+Starting zip deployment. This operation can take a while to complete ...
+Deployment endpoint responded with status code 202
+BuildRequestReceived...          Success!
+BuildPending...                  Success!
+BuildInProgress...               Success!
+
+Your application is running.
+
+You can launch the app at http://ambitious-dune-b61b498b8be7402cbb5cba66ae358d69.azurewebsites.net
+
+------------------------------------------
+
+If you already have webpp, rg, service plan, etc, then zip the code and deploy (there are many approaches apart from zip menthod)
+
+zip -r azure-python-webapp.zip . -x '.??*'
+
+az webapp deploy --type zip \
+    --name ambitious-dune-b61b498b8be7402cbb5cba66ae358d69 \
+    --resource-group narayanas87_rg_0073 \
+    --src-path azure-python-webapp.zip 
+
+
+```
+
+open browser and check http://ambitious-dune-b61b498b8be7402cbb5cba66ae358d69.azurewebsites.net
 
 
 
