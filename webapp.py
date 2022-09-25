@@ -7,6 +7,6 @@ app = Flask(__name__)
 @app.route('/index')
 def index():
     users = [ 'Jenkins','GitHUB','Nexus' ]
-    return render_template('index.html', title='Welcome', username=name)
+    return render_template('index.html', title='Welcome', username=users)
 
 app.run(host='0.0.0.0', port=81)
