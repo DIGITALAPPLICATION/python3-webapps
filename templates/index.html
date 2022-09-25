@@ -3,10 +3,11 @@
         <title>{{ title }}</title>
     </head>
     <body>
-        <ul>
-        {% for member in members: %}
-        <li>{{ member }}</li>
-	{% endfor %}
-	</ul>
+        <main>
+		<form method="post" action="{{url_for('hello')}}">
+			<p>Could you please tell me your name?</p>
+			<input type="text" class="form-control" id="name" name="name" style="max-width: 256px;">
+		</form>
+	</main>
     </body>
 </html>
