@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    users = [ 'Jenkins','GitHUB','Nexus' ]
+    return render_template('index.html', title='Welcome', members=users)
 
 
 if __name__ == "__main__":
