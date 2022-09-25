@@ -16,7 +16,7 @@ def login():
       return redirect(url_for('dashboard',name = user))
    else:
       user = request.args.get('name')
-      return render_template('login.html')
+      return render_template('index.html')
 
 if __name__ == '__main__':
    app.run(debug = True)
