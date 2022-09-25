@@ -1,4 +1,5 @@
-https://pythonbasics.org/flask-tutorial-templates/
+https://learn.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli
+
 
 Tested this on ubuntu:
 
@@ -6,14 +7,14 @@ Tested this on ubuntu:
 
 `apt-get install python3 -y && apt-get install python3-pip -y`
 
-`git clone -b 4-webapp-flask-docker https://github.com/DIGITALAPPLICATION/python3-webapps.git`
+`git clone -b 5-webapp-flask-azureapp https://github.com/DIGITALAPPLICATION/python3-webapps.git`
 `cd python3-webapps`
 
 `pip install -r requirements.txt`
 
 `output: Successfully installed Jinja2-3.1.2 MarkupSafe-2.1.1 Werkzeug-2.2.2 click-8.1.3 flask-2.2.2 importlib-metadata-4.12.0 itsdangerous-2.1.2`
 
-`python3 webapp.py`
+`python3 app.py`
 
 ```
  * Serving Flask app 'sam'
